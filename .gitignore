@@ -24,4 +24,4 @@ bower_components
 .DS_Store
 Thumbs.db
 
-server/node/config.js
+config.js
