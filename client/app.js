@@ -39,11 +39,11 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
     $urlRouterProvider.otherwise('/');
 
     $authProvider.facebook({
-      clientId: '657854390977827'
+      clientId: '1785682888331393'
     });
 
     $authProvider.google({
-      clientId: '631036554609-v5hm2amv4pvico3asfi97f54sc51ji4o.apps.googleusercontent.com'
+      clientId: '976740870333-6rs86qnimrju3tmv7o47klkfnfdtmbq1.apps.googleusercontent.com'
     });
 
     $authProvider.github({
