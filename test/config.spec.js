@@ -106,15 +106,6 @@ describe('SatellizerConfig', function() {
     expect(this.config.providers.github.clientId).toBe('1234');
   });
 
-  it('should update linkedin with new params', function() {
-    this.$authProvider.linkedin({ state: 'secret' });
-    expect(this.config.providers.linkedin.state).toBe('secret');
-  });
-
-  it('should update twitter with new params', function() {
-    this.$authProvider.twitter({ url: '/api/twitter' });
-    expect(this.config.providers.twitter.url).toBe('/api/twitter');
-  });
 
   it('should create new oauth2 provider', function() {
     this.$authProvider.oauth2({ name: 'instagram', url: '/auth/instagram' });
@@ -150,4 +141,3 @@ describe('SatellizerConfig', function() {
   });
 
 });
-
