@@ -53,6 +53,9 @@ userSchema.methods.comparePassword = function(password, done) {
 var User = mongoose.model('User', userSchema);
 
 mongoose.connect(config.MONGO_URI);
+mongoose.connection.on('open', function(msg) {
+  console.log('A user connected to ' + config.MONGO_URI + '.'.red);
+});
 mongoose.connection.on('error', function(err) {
   console.log('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
 });
@@ -119,7 +122,7 @@ function createJWT(user) {
  | GET /api/me
  |--------------------------------------------------------------------------
  */
-app.get('/api/me', ensureAuthenticated, function(req, res) {
+app.get('/api/me', function(req, res) {
   User.findById(req.user, function(err, user) {
     res.send(user);
   });
